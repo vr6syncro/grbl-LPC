@@ -32,10 +32,10 @@
 
 
 // Define board type for pin map and default settings.
-#define CPU_MAP_SMOOTHIEBOARD   // Smoothieboard (NXP LPC1769 MCU)
+//#define CPU_MAP_SMOOTHIEBOARD   // Smoothieboard (NXP LPC1769 MCU)
 //#define CPU_MAP_C3D_REMIX       // Cohesion3D Remix (NXP LPC1769 MCU)
 //#define CPU_MAP_C3D_MINI        // Cohesion3D Mini (NXP LPC1769 MCU)
-//#define CPU_MAP_MKS_SBASE       // MKS SBASE Board (NXP LPC1768 MCU)
+#define CPU_MAP_MKS_SBASE       // MKS SBASE Board (NXP LPC1768 MCU)
 //#define CPU_MAP_AZTEEG_X5       // Azteeg X5 Board (NXP LPC1769 MCU)
 
 // Force other Spindle PWM Pin (default is P2.5)
@@ -121,8 +121,8 @@
 // NOTE: The following are two examples to setup homing for 2-axis machines.
 // #define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS))  // NOT COMPATIBLE WITH COREXY: Homes both X-Y in one cycle. 
 
-// #define HOMING_CYCLE_0 (1<<X_AXIS)  // COREXY COMPATIBLE: First home X
-// #define HOMING_CYCLE_1 (1<<Y_AXIS)  // COREXY COMPATIBLE: Then home Y
+#define HOMING_CYCLE_0 (1<<X_AXIS)  // COREXY COMPATIBLE: First home X
+#define HOMING_CYCLE_1 (1<<Y_AXIS)  // COREXY COMPATIBLE: Then home Y
 
 // Number of homing cycles performed after when the machine initially jogs to limit switches.
 // This helps in preventing overshoot and should improve repeatability. This value should be one or
@@ -201,7 +201,7 @@
 // defined at (http://corexy.com/theory.html). Motors are assumed to positioned and wired exactly as
 // described, if not, motions may move in strange directions. Grbl requires the CoreXY A and B motors
 // have the same steps per mm internally.
-// #define COREXY // Default disabled. Uncomment to enable.
+#define COREXY // Default disabled. Uncomment to enable.
 
 // Inverts pin logic of the control command pins based on a mask. This essentially means you can use
 // normally-closed switches on the specified pins, rather than the default normally-open switches.
